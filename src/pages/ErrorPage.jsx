@@ -9,13 +9,16 @@ const ErrorPage = () => {
   };
 
   return (
-    <div className="bg-red-300 w-full h-screen flex-col p-2 flex items-center justify-center">
-      <h1 className="text-2xl font-bold">404 - Page Not Found</h1>
-      <p className="text-lg mt-2">The page you’re looking for doesn’t exist.</p>
+    <div className="min-h-screen bg-gradient-to-br from-[#e7f1f5] to-[#b9dee6] flex flex-col items-center justify-center px-6 text-[#124E66] text-center animate-fade-in">
+      <h1 className="text-6xl font-extrabold mb-4">404</h1>
+      <p className="text-2xl font-semibold mb-2">Oops! Page Not Found</p>
+      <p className="mb-6 text-[#124E66]">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
       <button
         onClick={handleGoHome}
-        className="p-2 px-4 bg-amber-500 cursor-pointer mt-4 rounded hover:bg-amber-600 transition duration-200">
-        Go Back to Home Page
+        className="bg-[#124E66] text-white cursor-pointer font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-[#6187b9] transition">
+        Go Back to Home
       </button>
     </div>
   );

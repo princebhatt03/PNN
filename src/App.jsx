@@ -8,6 +8,7 @@ import Skills from './pages/Skills';
 import Project from './pages/Project';
 import Header from './components/Header';
 import Preloader from './components/Preloader';
+import Footer from './components/Footer';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +56,7 @@ const App = () => {
           element={<ErrorPage />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 };

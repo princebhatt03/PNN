@@ -80,7 +80,7 @@ const Header = () => {
         </button>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden cursor-pointer md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
             <button
               key={index}
