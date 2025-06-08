@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { FaGithub, FaLinkedin, FaWhatsapp, FaHackerrank } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +25,61 @@ const Header = () => {
     <>
       {/* Top Navbar */}
       <nav className="bg-[#124E66] text-white border-b shadow-md px-6 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50">
-        <h1 className="text-xl font-bold tracking-wide">Student Portfolio</h1>
+        {/* Left Side Icons */}
+        <div className="flex space-x-4 items-center">
+          <a
+            href="https://github.com/navandarnidhi"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaGithub
+              size={22}
+              className="hover:text-[#D3D9D4] transition"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nidhi-navandar/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaLinkedin
+              size={22}
+              className="hover:text-[#D3D9D4] transition"
+            />
+          </a>
+          <a
+            href="https://wa.me/917977565476"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaWhatsapp
+              size={20}
+              className="hover:text-[#D3D9D4] transition"
+            />
+          </a>
+
+          <a href="mailto:navandarnidhi@gmail.com">
+            <MdEmail
+              size={22}
+              className="hover:text-[#D3D9D4] transition"
+            />
+          </a>
+          <a
+            href="https://www.hackerrank.com/profile/navandarnidhi"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaHackerrank
+              size={22}
+              className="hover:text-[#D3D9D4] transition"
+            />
+          </a>
+        </div>
+
+        {/* Hamburger for Mobile */}
         <button
           className="md:hidden p-2 focus:outline-none"
           onClick={() => setIsOpen(true)}>
           <Menu size={28} />
         </button>
+
+        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
             <button
@@ -41,7 +92,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Backdrop Blur */}
+      {/* Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 backdrop-blur-sm bg-[#D3D9D4]/40 z-40"
