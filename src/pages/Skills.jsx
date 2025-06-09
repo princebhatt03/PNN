@@ -1,7 +1,16 @@
 import React from 'react';
+import SkillComponent from '../components/SkillsComponent/SkillsComponents';
+import Interest from '../components/SkillsComponent/Interest';
+import Courses from '../components/SkillsComponent/Course';
 
 const Skills = () => {
-  return <div>Skills</div>;
+  return (
+    <>
+      <SkillComponent />
+      <Courses />
+      <Interest />
+    </>
+  );
 };
 
 export default Skills;
