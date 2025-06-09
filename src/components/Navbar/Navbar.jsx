@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="shadow-md bg-[#ffffff] w-full fixed text-[#002057] duration-200 z-40">
+    <div className="shadow-md bg-[#f0f4ff] w-full fixed text-[#002057] duration-200 z-40">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
         {/* Left side: Social Icons + Hamburger on mobile */}
         <div className="flex items-center w-full justify-between space-x-4">
