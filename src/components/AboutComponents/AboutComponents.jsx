@@ -1,4 +1,5 @@
 import React from 'react';
+import resume from '../../assets/docs/Nidhi-Navandar-Resume.pdf';
 import profileImage from '../../assets/images/Profile-Image1.jpg';
 import {
   FaGithub,
@@ -150,7 +151,7 @@ const About = () => {
         {/* Call to Action */}
         <div className="text-center mt-20">
           <a
-            href="/resume.pdf"
+            href={resume}
             download
             className="inline-block bg-[#FF7B00] hover:bg-[#011AFF] text-white font-semibold py-3 px-8 rounded-full shadow transition duration-300">
             Download Resume

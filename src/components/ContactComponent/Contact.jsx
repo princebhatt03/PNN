@@ -1,4 +1,5 @@
 import React from 'react';
+import resume from '../../assets/docs/Nidhi-Navandar-Resume.pdf';
 import {
   FaEnvelope,
   FaPhone,
@@ -84,7 +85,7 @@ const Contact = () => {
             {/* Resume Download */}
             <div className="pt-6">
               <a
-                href="/resume.pdf"
+                href={resume}
                 download
                 className="inline-flex items-center gap-2 bg-[#FF7B00] hover:bg-[#011AFF] text-white px-6 py-3 rounded-full font-medium shadow transition duration-300">
                 <FaDownload /> Download Resume

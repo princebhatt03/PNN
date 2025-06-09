@@ -12,9 +12,9 @@ import { MdEmail } from 'react-icons/md';
 const FooterLinks = [
   { title: 'Home', link: '/' },
   { title: 'About', link: '/about' },
-  { title: 'Contact', link: '/contact' },
   { title: 'Skills', link: '/skills' },
   { title: 'Project', link: '/project' },
+  { title: 'Contact', link: '/contact' },
 ];
 
 // Background animation with dark blue to white gradient shifting
