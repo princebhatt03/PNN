@@ -76,14 +76,12 @@ const ResumeSection = () => {
       <div className="container">
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
-          <p
-            data-aos="fade-up"
-            className="text-sm text-primary">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-1 text-primary">
             Resume
-          </p>
+          </h1>
           <h1
             data-aos="fade-up"
-            className="text-3xl font-bold">
+            className="text-lg font-bold">
             Nidhi Navandar
           </h1>
           <p

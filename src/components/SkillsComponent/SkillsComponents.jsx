@@ -88,8 +88,10 @@ const Skills = () => {
     <div className="py-12 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <div className="container">
         <div className="text-center mb-12 max-w-2xl mx-auto">
-          <p className="text-sm text-primary">Technical Skills</p>
-          <h2 className="text-3xl font-bold">What Nidhi Knows</h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-1 text-primary">
+            Skills
+          </h1>
+          <h4 className="text-lg font-bold">What Nidhi Knows</h4>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Tools and technologies Nidhi has mastered.
           </p>

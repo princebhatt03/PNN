@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from '../../assets/images/Profile-Image1.jpg'; 
+import profileImage from '../../assets/images/Profile-Image1.jpg';
 import {
   FaGithub,
   FaLinkedin,
@@ -51,6 +51,9 @@ const About = () => {
   return (
     <div className="pt-20 pb-20 min-h-screen bg-white dark:bg-gray-900 text-[#124E66] px-4">
       <div className="container mx-auto max-w-7xl">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-primary">
+          About
+        </h1>
         {/* Header Section */}
         <div
           className="text-center mb-16"

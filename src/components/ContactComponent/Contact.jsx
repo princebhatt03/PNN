@@ -12,7 +12,12 @@ const codingGif = 'https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif';
 
 const Contact = () => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0 bg-white dark:bg-gray-900 text-[#124E66] px-4">
+    <div className="min-h-[550px] flex justify-center items-center flex-col py-12 sm:py-0 bg-white dark:bg-gray-900 text-[#124E66] px-4">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-primary">
+          Contact
+        </h1>
+      </div>
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
           {/* GIF Section */}
