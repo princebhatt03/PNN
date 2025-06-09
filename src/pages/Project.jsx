@@ -1,70 +1,104 @@
 import React from 'react';
-
-const projects = [
-  {
-    title: 'Anti Money Laundering Detection',
-    description: [
-      'Developed a predictive model to detect money laundering activities.',
-      'Trained models: Random Forest, Logistic Regression, XGBoost (achieved 93% accuracy).',
-      'Created a pickle file for the trained model and integrated it with a Streamlit app for predictions.',
-      'Performed EDA using PySpark.',
-      'Deployed the project on Azure Cloud Services.',
-      'Visualized insights and trends in the dataset using Power BI.',
-    ],
-    techStack: ['Python', 'PySpark', 'Streamlit', 'Azure', 'Power BI'],
-  },
-  {
-    title: 'Book App',
-    description: [
-      'A Streamlit-based online BookStore platform to browse and purchase books.',
-      'Connected with a SQL database for storing and managing books and orders.',
-      'Simple UI built with Streamlit, offering book search, categories, and checkout functionalities.',
-    ],
-    techStack: ['Streamlit', 'SQL', 'Python'],
-  },
-  {
-    title: 'Heart Disease Prediction Using Wrapper Method and ML',
-    description: [
-      'Built a heart disease prediction system using ML algorithms: Random Forest, SVM, KNN, Decision Tree, and Logistic Regression.',
-      'Used Forward Feature Selection with KNN, improving accuracy from 67% to 84.61%.',
-      'Supports early detection and aids medical professionals in decision-making.',
-      'Designed for scalability, reliability, and efficiency in clinical usage.',
-    ],
-    techStack: [
-      'Python',
-      'ML Algorithms',
-      'Feature Selection',
-      'Pandas',
-      'Matplotlib',
-    ],
-  },
-];
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 const Project = () => {
+  const projects = [
+    {
+      title: 'Anti Money Laundering Detection',
+      type: 'Machine Learning · Big Data',
+      role: 'ML Engineer',
+      duration: 'Jan 2024 – Mar 2024',
+      liveLink: 'https://your-aml-streamlit-app.com',
+      github: 'https://github.com/your-repo/aml-detection',
+      description: [
+        'Developed a predictive model to detect money laundering activities.',
+        'Trained models: Random Forest, Logistic Regression, XGBoost (93% accuracy).',
+        'Integrated model with a Streamlit dashboard for real-time predictions.',
+        'Performed large-scale data handling and EDA using PySpark.',
+        'Hosted the ML pipeline and UI on Azure Cloud Services.',
+        'Power BI dashboards for actionable insights.',
+      ],
+      techStack: ['Python', 'PySpark', 'Streamlit', 'Azure', 'Power BI'],
+    },
+    {
+      title: 'Book App',
+      type: 'Web App · Streamlit',
+      role: 'Full Stack Developer',
+      duration: 'Oct 2023 – Nov 2023',
+      liveLink: '',
+      github: 'https://github.com/your-repo/book-app',
+      description: [
+        'Built an online BookStore platform with Streamlit.',
+        'SQL backend for book listings, order management, and user sessions.',
+        'Clean UI with features like category filtering, search, and checkout.',
+      ],
+      techStack: ['Streamlit', 'SQL', 'Python'],
+    },
+    {
+      title: 'Heart Disease Prediction Using Wrapper Method',
+      type: 'Machine Learning · HealthTech',
+      role: 'ML Engineer',
+      duration: 'Aug 2023 – Sep 2023',
+      liveLink: '',
+      github: 'https://github.com/your-repo/heart-disease-prediction',
+      description: [
+        'Implemented ML models (RF, SVM, KNN, DT, LR) for heart disease prediction.',
+        'Used Forward Feature Selection to boost accuracy from 67% to 84.61%.',
+        'Focused on reliability, clinical readiness, and real-time analytics.',
+      ],
+      techStack: [
+        'Python',
+        'ML Algorithms',
+        'Feature Selection',
+        'Pandas',
+        'Matplotlib',
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-8 bg-gray-50 dark:bg-gray-900 dark:text-white">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-primary">
-          Projects
-        </h1>
-        <div className="grid gap-8">
+    <section className="min-h-screen py-16 px-4 sm:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div className="max-w-6xl mt-12 mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#FF7B00]">
+            Projects
+          </h1>
+          <p className="text-sm mt-2 text-gray-600 dark:text-gray-400">
+            A showcase of key academic and freelance projects involving data
+            science, ML, and full stack development.
+          </p>
+        </div>
+
+        <div className="grid gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-primary">
-                {project.title}
-              </h2>
-              <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+              className="bg-[#FF7B00]/5 dark:bg-gray-800 rounded-lg shadow-md p-6 sm:p-8 transition hover:shadow-xl border border-[#FF7B00]/10">
+              <div className="mb-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                <h2 className="text-2xl font-bold text-[#124E66]">
+                  {project.title}
+                </h2>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-0">
+                  <span className="mr-2">{project.type}</span>·{' '}
+                  <span className="ml-2">{project.duration}</span>
+                </div>
+              </div>
+
+              <div className="text-sm text-gray-700 dark:text-gray-300 space-y-2 mb-4">
                 {project.description.map((point, idx) => (
-                  <li key={idx}>{point}</li>
+                  <li
+                    key={idx}
+                    className="ml-4 list-disc">
+                    {point}
+                  </li>
                 ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-4 mb-2">
                 {project.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="text-sm bg-primary/20 dark:bg-primary/30 text-primary px-3 py-1 rounded-full">
+                    className="text-sm bg-[#FACC15]/30 text-[#FF7B00] px-3 py-1 rounded-full font-medium">
                     {tech}
                   </span>
                 ))}
@@ -73,7 +107,7 @@ const Project = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

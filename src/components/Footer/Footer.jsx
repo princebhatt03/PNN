@@ -1,6 +1,5 @@
 import React from 'react';
 import profile from '../../assets/images/Profile-Image1.jpg';
-import Banner from '../../assets/website/footer-pattern.jpg';
 import {
   FaGithub,
   FaLinkedin,
@@ -10,15 +9,6 @@ import {
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-const BannerImg = {
-  backgroundImage: `url(${Banner})`,
-  backgroundPosition: 'bottom',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  height: '100%',
-  width: '100%',
-};
-
 const FooterLinks = [
   { title: 'Home', link: '/' },
   { title: 'About', link: '/about' },
@@ -27,92 +17,128 @@ const FooterLinks = [
   { title: 'Project', link: '/project' },
 ];
 
+// Background animation with dark blue to white gradient shifting
+const animatedBg = {
+  background:
+    'linear-gradient(-45deg, #002057, #3f72af, #ffffff, #3f72af, #002057)',
+  backgroundSize: '300% 300%',
+  animation: 'gradientShift 20s ease infinite',
+  color: 'rgba(0, 31, 63, 0.85)', // dark navy text with slight transparency for better contrast
+  textShadow: '0 0 5px rgba(255, 255, 255, 0.6)', // subtle white glow for readability
+};
+
 const Footer = () => {
   return (
-    <div
-      style={BannerImg}
-      className="text-white">
-      <div className="container mx-auto px-4">
-        <div
-          data-aos="zoom-in"
-          className="grid md:grid-cols-3  gap-8 pb-20 pt-10">
-          {/* Personal Info */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-3xl text-xl font-bold flex items-center gap-3 mb-3">
-              <img
-                src={profile}
-                alt="Logo"
-                className="max-w-[50px]"
-              />
-              Nidhi Navandar
-            </h1>
-            <p className="text-sm text-gray-200">
-              Aspiring Data Scientist | Python Developer | Big Data Enthusiast
-            </p>
-          </div>
+    <>
+      <style>{`
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
 
-          {/* Navigation Links */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-xl text-xl font-bold mb-3">Quick Links</h1>
-            <ul className="flex flex-col gap-3">
-              {FooterLinks.map(link => (
-                <li
-                  className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                  key={link.title}>
-                  <a href={link.link}>{link.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links & Location */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-xl text-xl font-bold mb-3">Connect</h1>
-            <div className="flex md:flex-row flex-col md:items-center md:gap-4 gap-3 mb-4">
-              <a
-                href="https://github.com/navandarnidhi"
-                target="_blank"
-                rel="noopener noreferrer">
-                <FaGithub className="text-2xl hover:text-primary transition" />
-              </a>
-              <a
-                href="https://linkedin.com/in/nidhi-navandar"
-                target="_blank"
-                rel="noopener noreferrer">
-                <FaLinkedin className="text-2xl hover:text-primary transition" />
-              </a>
-              <a
-                href="https://wa.me/917977565476"
-                target="_blank"
-                rel="noopener noreferrer">
-                <FaWhatsapp className="text-2xl hover:text-primary transition" />
-              </a>
-              <a
-                href="https://www.hackerrank.com/profile/navandarnidhi"
-                target="_blank"
-                rel="noopener noreferrer">
-                <FaHackerrank className="text-2xl hover:text-primary transition" />
-              </a>
-              <a href="mailto:navandarnidhi@gmail.com">
-                <MdEmail className="text-2xl hover:text-primary transition" />
-              </a>
+      <footer
+        style={animatedBg}
+        className="py-10">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Personal Info */}
+            <div className="flex flex-col items-center md:items-start gap-3 px-4">
+              <h1 className="flex items-center gap-3 font-bold text-2xl mb-2">
+                <img
+                  src={profile}
+                  alt="Profile"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                Nidhi Navandar
+              </h1>
+              <p className="font-semibold">
+                Aspiring Data Scientist | Python Developer | Big Data Enthusiast
+              </p>
             </div>
-            <div className="flex items-center gap-3 mt-4 text-gray-200">
-              <FaLocationArrow />
-              <p>Pune, Maharashtra, India</p>
+
+            {/* Quick Links */}
+            <div className="px-4">
+              <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+              <ul className="flex flex-col gap-3">
+                {FooterLinks.map(link => (
+                  <li key={link.title}>
+                    <a
+                      href={link.link}
+                      className="hover:text-[#002057] transition-colors duration-300 font-semibold">
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Social & Location */}
+            <div className="px-4">
+              <h2 className="text-xl font-bold mb-4">Connect</h2>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://github.com/navandarnidhi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#002057] transition-colors duration-300"
+                  aria-label="GitHub">
+                  <FaGithub size={26} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/nidhi-navandar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#002057] transition-colors duration-300"
+                  aria-label="LinkedIn">
+                  <FaLinkedin size={26} />
+                </a>
+                <a
+                  href="https://wa.me/917977565476"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#002057] transition-colors duration-300"
+                  aria-label="WhatsApp">
+                  <FaWhatsapp size={26} />
+                </a>
+                <a
+                  href="https://www.hackerrank.com/profile/navandarnidhi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#002057] transition-colors duration-300"
+                  aria-label="HackerRank">
+                  <FaHackerrank size={26} />
+                </a>
+                <a
+                  href="mailto:navandarnidhi@gmail.com"
+                  className="hover:text-[#002057] transition-colors duration-300"
+                  aria-label="Email">
+                  <MdEmail size={26} />
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 mt-6 font-semibold">
+                <FaLocationArrow size={20} />
+                <span>Pune, Maharashtra, India</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Copyright */}
-        <div className="flex items-center justify-center w-full">
-          <div className="text-center w-fit p-2 text-black text-sm">
+          {/* Copyright */}
+          <div className="mt-12 text-center font-semibold text-sm">
             &copy; {new Date().getFullYear()} Nidhi Navandar. All rights
             reserved.
           </div>
         </div>
-      </div>
-    </div>
+      </footer>
+    </>
   );
 };
 

@@ -5,88 +5,99 @@ import {
   FaMapMarkerAlt,
   FaLinkedin,
   FaGithub,
+  FaDownload,
 } from 'react-icons/fa';
 
-// Use a coding or developer-themed GIF
 const codingGif = 'https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif';
 
 const Contact = () => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center flex-col py-12 sm:py-0 bg-white dark:bg-gray-900 text-[#124E66] px-4">
-      <div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-primary">
-          Contact
+    <div className="min-h-screen flex  items-center justify-center px-4 py-16 bg-white text-[#124E66]">
+      <div className="container mt-10 mx-auto max-w-7xl">
+        <h1 className="text-4xl font-bold text-center mb-12 text-[#FF7B00]">
+          Get in Touch
         </h1>
-      </div>
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
-          {/* GIF Section */}
-          <div data-aos="zoom-in">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Image */}
+          <div data-aos="fade-right">
             <img
               src={codingGif}
-              alt="Coding"
-              className="max-w-[400px] h-[350px] w-full mx-auto object-cover rounded-xl drop-shadow-[-10px_10px_12px_rgba(0,0,0,1)]"
+              alt="Contact"
+              className="rounded-xl w-full max-w-md mx-auto drop-shadow-[-10px_10px_15px_rgba(0,0,0,0.4)]"
             />
           </div>
 
-          {/* Contact Details */}
-          <div className="flex flex-col justify-center gap-6">
-            <h1
-              data-aos="fade-up"
-              className="text-3xl sm:text-4xl font-bold">
-              Get in Touch
-            </h1>
-            <p
-              data-aos="fade-up"
-              className="text-sm text-gray-600 dark:text-gray-300 tracking-wide leading-5">
-              Feel free to connect with me for opportunities, collaboration, or
-              just a friendly tech chat.
+          {/* Right: Details */}
+          <div
+            className="space-y-6"
+            data-aos="fade-left">
+            <p className="text-gray-700 text-lg dark:text-gray-300">
+              Whether you’re looking to collaborate, offer a job opportunity, or
+              just say hello — feel free to reach out!
             </p>
-            <div className="flex flex-col gap-4 text-base text-gray-800 dark:text-gray-200">
-              <div
-                data-aos="fade-up"
-                className="flex items-center gap-4">
-                <FaEnvelope className="text-2xl h-10 w-10 p-2 bg-blue-100 dark:bg-blue-400 rounded-full shadow-sm" />
-                <p>nidhinavandar@gmail.com</p>
+
+            <div className="space-y-4">
+              {/* Email */}
+              <div className="flex items-center gap-4 bg-[#FACC15]/20 rounded-xl p-4 shadow hover:shadow-lg transition">
+                <FaEnvelope className="text-[#FF7B00] text-xl" />
+                <p className="text-sm sm:text-base">nidhinavandar@gmail.com</p>
               </div>
-              <div
-                data-aos="fade-up"
-                className="flex items-center gap-4">
-                <FaPhone className="text-2xl h-10 w-10 p-2 bg-green-100 dark:bg-green-400 rounded-full shadow-sm" />
-                <p>+91 9876543210</p>
+
+              {/* Phone */}
+              <div className="flex items-center gap-4 bg-[#011AFF]/10 rounded-xl p-4 shadow hover:shadow-lg transition">
+                <FaPhone className="text-[#011AFF] text-xl" />
+                <p className="text-sm sm:text-base">+91 9876543210</p>
               </div>
-              <div
-                data-aos="fade-up"
-                className="flex items-center gap-4">
-                <FaMapMarkerAlt className="text-2xl h-10 w-10 p-2 bg-yellow-100 dark:bg-yellow-400 rounded-full shadow-sm" />
-                <p>Pune, Maharashtra, India</p>
+
+              {/* Location */}
+              <div className="flex items-center gap-4 bg-[#FF7B00]/10 rounded-xl p-4 shadow hover:shadow-lg transition">
+                <FaMapMarkerAlt className="text-[#FF7B00] text-xl" />
+                <p className="text-sm sm:text-base">Pune, Maharashtra, India</p>
               </div>
-              <div
-                data-aos="fade-up"
-                className="flex items-center gap-4">
-                <FaLinkedin className="text-2xl h-10 w-10 p-2 bg-sky-100 dark:bg-sky-400 rounded-full shadow-sm" />
+
+              {/* LinkedIn */}
+              <div className="flex items-center gap-4 bg-[#011AFF]/10 rounded-xl p-4 shadow hover:shadow-lg transition">
+                <FaLinkedin className="text-[#011AFF] text-xl" />
                 <a
                   href="https://linkedin.com/in/nidhinavandar"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline">
+                  rel="noreferrer"
+                  className="text-sm sm:text-base underline hover:text-[#FF7B00]">
                   linkedin.com/in/nidhinavandar
                 </a>
               </div>
-              <div
-                data-aos="fade-up"
-                className="flex items-center gap-4">
-                <FaGithub className="text-2xl h-10 w-10 p-2 bg-gray-200 dark:bg-gray-600 rounded-full shadow-sm" />
+
+              {/* GitHub */}
+              <div className="flex items-center gap-4 bg-gray-200 rounded-xl p-4 shadow hover:shadow-lg transition">
+                <FaGithub className="text-gray-800 text-xl" />
                 <a
                   href="https://github.com/nidhinavandar"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline">
+                  rel="noreferrer"
+                  className="text-sm sm:text-base underline hover:text-[#FF7B00]">
                   github.com/nidhinavandar
                 </a>
               </div>
             </div>
+
+            {/* Resume Download */}
+            <div className="pt-6">
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 bg-[#FF7B00] hover:bg-[#011AFF] text-white px-6 py-3 rounded-full font-medium shadow transition duration-300">
+                <FaDownload /> Download Resume
+              </a>
+            </div>
           </div>
+        </div>
+
+        {/* Footer Message */}
+        <div className="text-center mt-16">
+          <p className="italic text-gray-500 text-sm">
+            “Let’s build something impactful together.”
+          </p>
         </div>
       </div>
     </div>
